@@ -1,0 +1,16 @@
+{
+  "name": "sw-sprints-js-treeview",
+  "version": "1.0.0",
+  "author": "Phillip Choi <jaeja.phil@gmail.com>",
+  "description": "sw_sprints_js_treeUI",
+  "main": "fix_me.js",
+  "scripts": {
+    "test": "mocha __test__/index.test.js",
+    "submit": "node .travis/submit.js"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "jsdom": "^16.4.0",
+    "mocha": "^8.2.0"
+  }
+}
