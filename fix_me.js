@@ -174,6 +174,32 @@ const root = document.getElementById('root');
 
 function createTreeView(menu, currentNode) {
   // createTreeView 함수를 작성하세요.
+  // menu => 배열. forEach.
+  // currentNode => ul  
+
+  menu.forEach(function(el){
+
+    const list = document.createElement('li')
+    const checkBox = document.createElement('input')
+    checkBox.setAttribute('type','checkBox')
+    
+    const span = document.createElement('span')
+    list.append(checkBox, span)
+    span.textContent = el.name;
+    
+    const ul = document.createElement('ul')  
+    list.appendChild(ul)
+    currentNode.appendChild(list);
+    
+    if(el.children === undefined){
+      list.textContent = el.name; 
+      //자식 엘리먼트가 없는 경우, 텍스트만 남긴다.ul도 사라짐. 
+    } else {
+      createTreeView(el.children, ul);
+    }
+  
+  });
+
 }
 
 createTreeView(menu, root);
